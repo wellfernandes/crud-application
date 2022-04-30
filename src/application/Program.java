@@ -17,9 +17,7 @@ public class Program {
 		
 		try {
 			conn = DB.getConnection();
-			
 			st = conn.createStatement();
-			
 			rs = st.executeQuery("select * from department");
 			
 			while(rs.next()) {
@@ -34,9 +32,6 @@ public class Program {
 			DB.closeConnection();
 		}
 		
-		//System.out.println("Connected to the database.");
-		//DB.closeConnection();
-		//System.out.println("Disconnected from the database..");
 	}
 
 }

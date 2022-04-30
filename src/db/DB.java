@@ -21,6 +21,7 @@ public class DB {
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
 				conn = DriverManager.getConnection(url, props);
+				System.out.println("Connected to the database."); //log console
 			}catch(SQLException e){
 				throw new DbException(e.getMessage());
 			}
@@ -33,6 +34,7 @@ public class DB {
 		if(conn != null) {
 			try {
 				conn.close();
+				System.out.println("Disconnected from the database.."); //log console
 			}catch(SQLException e) {
 				throw new DbException(e.getMessage());
 			}
@@ -42,7 +44,6 @@ public class DB {
 	//load properties from file
 	private static Properties loadProperties() {
 		try (FileInputStream fs = new FileInputStream("db.properties")){ 
-			
 			Properties props = new Properties();
 			props.load(fs);
 			return props;
@@ -51,6 +52,7 @@ public class DB {
 		}
 	}
 	
+	//close statement
 	public static void closeStatement(Statement st) {
 		if(st != null) {
 			try {
@@ -59,9 +61,9 @@ public class DB {
 				throw new DbException(e.getMessage());
 			}
 		}
-		
 	}
 	
+	//close resultSet
 	public static void closeResultSet(ResultSet rs) {
 		if(rs != null) {
 			try {
