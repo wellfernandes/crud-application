@@ -17,6 +17,7 @@ public class Department implements Serializable {
 		this.id = id;
 		this.name = name;
 	}
+	
 	//getters and setters
 	public Integer getId() {
 		return id;
@@ -30,6 +31,7 @@ public class Department implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	//hashCodeEquals
 	@Override
 	public int hashCode() {
@@ -46,6 +48,7 @@ public class Department implements Serializable {
 		Department other = (Department) obj;
 		return Objects.equals(id, other.id);
 	}
+	
 	//toString
 	@Override
 	public String toString() {
