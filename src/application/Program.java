@@ -60,10 +60,17 @@ public class Program {
 		//departmentDao.insert(department); //test insert new department
 		//System.out.println("Inserted! New department Id= " + department.getId());
 
-		
+		/*
 		System.out.println("::: TEST 2 - findById Department :::");
 		Department department = departmentDao.findById(3); //test findById Department
 		System.out.println(department); 
+		*/
+		
+		System.out.println("::: TEST 3 - update Department :::");
+		Department department  = departmentDao.findById(6);
+		department.setName("Tools"); //updating the name of department
+		departmentDao.update(department);
+		System.out.println("Update completed!");
 		
 	}
 }
