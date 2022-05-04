@@ -1,9 +1,13 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
+import model.entities.Department;
+import model.entities.Seller;
 
 public class Program {
 
@@ -74,13 +78,19 @@ public class Program {
 		departmentDao.update(department);
 		System.out.println("Update completed!");
 		
-		*/
-		
+
 		System.out.println("::: TEST 4 - delete Department :::");
 		System.out.println("Enter id for delete test: ");
 		int id = scanner.nextInt();
 		departmentDao.deleteById(id);
 		System.out.println("delete completed!");
 		scanner.close();
+		*/
+		
+		System.out.println("::: TEST 5 - findAll Department :::");
+		List<Department> list = departmentDao.findAll();
+		for(Department obj : list) { //print all departments
+			System.out.println(obj);
+		}
 	}
 }
