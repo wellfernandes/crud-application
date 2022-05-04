@@ -1,15 +1,17 @@
 package application;
 
+import java.util.Scanner;
+
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
-import model.entities.Department;
 
 public class Program {
 
 	public static void main(String[] args) {
-		/*
+		
 		Scanner scanner = new Scanner(System.in);
 		
+		/*
 		System.out.println("::: TEST 1 - findById Seller :::");	
 		//test class SellerDao
 		SellerDao sellerDao = new DaoFactory().createSellerDao();
@@ -64,7 +66,7 @@ public class Program {
 		System.out.println("::: TEST 2 - findById Department :::");
 		Department department = departmentDao.findById(3); //test findById Department
 		System.out.println(department); 
-		*/
+		
 		
 		System.out.println("::: TEST 3 - update Department :::");
 		Department department  = departmentDao.findById(6);
@@ -72,5 +74,13 @@ public class Program {
 		departmentDao.update(department);
 		System.out.println("Update completed!");
 		
+		*/
+		
+		System.out.println("::: TEST 4 - delete Department :::");
+		System.out.println("Enter id for delete test: ");
+		int id = scanner.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("delete completed!");
+		scanner.close();
 	}
 }
