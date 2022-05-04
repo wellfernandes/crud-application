@@ -53,11 +53,17 @@ public class Program {
 		System.out.println("delete completed!");
 		scanner.close();*/
 		
-		System.out.println("::: TEST 1 - insert Department :::");
-		Department department = new Department(null, "Supervisor");
+		
+		//System.out.println("::: TEST 1 - insert Department :::");
+		//Department department = new Department(null, "Supervisor");
 		DepartmentDao departmentDao = new DaoFactory().createDepartmentDao();
-		departmentDao.insert(department); //test insert new department
-		System.out.println("Inserted! New department Id= " + department.getId());
+		//departmentDao.insert(department); //test insert new department
+		//System.out.println("Inserted! New department Id= " + department.getId());
+
+		
+		System.out.println("::: TEST 2 - findById Department :::");
+		Department department = departmentDao.findById(3); //test findById Department
+		System.out.println(department); 
 		
 	}
 }
