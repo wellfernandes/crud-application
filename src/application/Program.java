@@ -1,20 +1,16 @@
 package application;
 
-import java.util.List;
-import java.util.Scanner;
-
 import model.dao.DaoFactory;
-import model.dao.SellerDao;
+import model.dao.DepartmentDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class Program {
 
 	public static void main(String[] args) {
-		
+		/*
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("::: TEST 1 - Seller findById :::");	
+		System.out.println("::: TEST 1 - findById Seller :::");	
 		//test class SellerDao
 		SellerDao sellerDao = new DaoFactory().createSellerDao();
 
@@ -23,7 +19,7 @@ public class Program {
 		System.out.println(seller); //test interface sellerDao JDBC
 		
 		System.out.println("");
-		System.out.println("::: TEST 2 - Seller findByDepartment :::");
+		System.out.println("::: TEST 2 - findByDepartment Seller :::");
 		Department department = new Department(2, null);
 		List<Seller> list = sellerDao.findByDepartment(department);
 		
@@ -32,29 +28,36 @@ public class Program {
 		}
 		
 		System.out.println("");
-		System.out.println("::: TEST 3 - Seller findAll :::");
+		System.out.println("::: TEST 3 - findAll Seller :::");
 		list = sellerDao.findAll();
 		
 		for(Seller obj : list) { //print list seller by all searched
 			System.out.println(obj);
 		}
 		
-		System.out.println("::: TEST 4 - Seller insert :::");
+		System.out.println("::: TEST 4 - insert Seller :::");
 		//Seller newSeller = new Seller(null, "Greg", "greg@testdev.com", new Date(), 5000.0, department);
 		//sellerDao.insert(newSeller);
 		//System.out.println("Inserted! New Id= " + newSeller.getId()); //print new seller inserted
 		
-		System.out.println("::: TEST 5 - Seller update :::");
+		System.out.println("::: TEST 5 - update Seller :::");
 		seller = sellerDao.findById(1);
 		seller.setName("Peter Moon"); //updating the name of seller
 		sellerDao.update(seller);
 		System.out.println("Update completed!");
 		
-		System.out.println("::: TEST 6 - Seller delete :::");
+		System.out.println("::: TEST 6 - delete Seller :::");
 		System.out.println("Enter id for delete test: ");
 		int id = scanner.nextInt();
 		sellerDao.deleteById(id);
 		System.out.println("delete completed!");
-		scanner.close();
+		scanner.close();*/
+		
+		System.out.println("::: TEST 1 - insert Department :::");
+		Department department = new Department(null, "Supervisor");
+		DepartmentDao departmentDao = new DaoFactory().createDepartmentDao();
+		departmentDao.insert(department); //test insert new department
+		System.out.println("Inserted! New department Id= " + department.getId());
+		
 	}
 }
